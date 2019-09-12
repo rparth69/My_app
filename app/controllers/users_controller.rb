@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
+# Users Controller for using users method
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show ]
+  before_action :set_user, only: [:show]
   def index
     @users = User.all
   end
@@ -31,17 +34,16 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
   def cleaner_booking
     @user = User.find(params[:user_id])
-    @bookings =  Booking.where(cleaner_id: params[:user_id])
+    @bookings = Booking.where(cleaner_id: params[:user_id])
   end
 
   def my_booking
     @user = User.find(params[:user_id])
-    @bookings =  @user.bookings
+    @bookings = @user.bookings
   end
 
   private
@@ -51,6 +53,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-     params.require(:user).permit(:first_name, :last_name, :phone_number, :user_type, city_ids: [])
+    params.require(:user).permit(:first_name, :last_name, :phone_number,
+                                 :user_type, city_ids: [])
   end
 end

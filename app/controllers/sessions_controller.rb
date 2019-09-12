@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
+# session controller for login users
 class SessionsController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
     @user = User.find_by(phone_number: params[:session][:phone_number])
@@ -13,6 +15,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-      redirect_to root_path
+    redirect_to root_path
   end
 end

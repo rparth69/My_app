@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# booking controller for booking
 class BookingsController < ApplicationController
   def index
     @city     = City.find(params[:city_id])
@@ -21,6 +24,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-     params.require(:booking).permit(:user_id, :date, :cleaner_id)
+    params.require(:booking).permit(:user_id, :date, :cleaner_id)
   end
 end

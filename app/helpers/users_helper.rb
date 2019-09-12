@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# user helper
 module UsersHelper
   def user_fname(cleaner_id)
     User.find(cleaner_id).first_name

@@ -1,10 +1,13 @@
+# frozen_string_literal: true
+
+# city controller for cities wise booking
 class CitiesController < ApplicationController
   def index
-     @cities = City.all
+    @cities = City.all
   end
 
   def new
-     @city = City.new
+    @city = City.new
   end
 
   def create
@@ -14,7 +17,8 @@ class CitiesController < ApplicationController
   end
 
   private
+
   def city_params
-     params.require(:city).permit(:name)
+    params.require(:city).permit(:name)
   end
 end
