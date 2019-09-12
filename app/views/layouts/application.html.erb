@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyAppTest</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-primary bg-primary">
+      <h3><%= link_to 'House Cleaning', root_path, class: 'text-white bg-primary' %></h3>
+    </nav>
+      <% flash.each do |key, value| %>
+      <div class="alert alert-danger">
+        <%= content_tag(:div, value, :class => "flash #{key}") %>
+      </div>
+      <% end %>
+    <%= yield %>
+  </body>
+</html>

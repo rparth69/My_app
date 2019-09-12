@@ -1,0 +1,21 @@
+<table class="table table-hover" width="100%">
+  <tr>
+     <th colspan="2"><center><h4>Booking</h4></center></th>
+  </tr>
+  <tr>
+    <th>Date</th>
+    <th>Customer Name</th>
+  </tr>
+    <% if @bookings.present? %>
+      <% @bookings.each do |book| %>
+        <tr>
+    	    <td><%= book.date %></td>
+          <td><%= "#{book.user.first_name} #{book.user.last_name}" %></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <div class="alert alert-info">
+         <strong>No Record Found !</strong>
+      </div>
+    <% end %>
+</table>

@@ -1,0 +1,8 @@
+
+<%= form_with model: @booking, url:  user_city_bookings_path, local: true do |f| %>
+    <%= f.label :date_for_bookings %>
+    <%= f.date_field :date %><br>
+    <%= f.label :Please_Select_Cleaner %>
+    <%= f.collection_select :cleaner_id, @user, :id, :last_name %><br><br>
+    <%= f.submit %>
+<% end %>

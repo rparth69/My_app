@@ -1,0 +1,25 @@
+<div class="container left">
+  <h3>
+    <p>
+      <strong>First name:</strong>
+      <%= @user.first_name.upcase %>
+      <%= @user.user_type %>
+    </p>
+    <p>
+      <strong>Last name:</strong>
+      <%= @user.last_name.upcase %>
+    </p>
+    <p>
+      <strong>Phone number:</strong>
+      <%= @user.phone_number %>
+    </p>
+  </h3>
+  <h4>
+    <table>
+
+     <th><%= link_to 'Bookings', user_cities_path(user_id: @user.id), class: "btn btn-success" %><br></th>
+      <th><%= link_to 'My booking', user_my_booking_path(user_id: @user.id), class: "btn btn-primary" %><br></th>
+     <th><%= link_to 'logout', root_path,  class: "btn btn-warning" %></th>
+   </h4>
+</div>
+</table>
