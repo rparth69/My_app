@@ -9,11 +9,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    if @user = User.new(user_params)
-      @user.save
+    @user = User.new(user_params)
+    if @user.save
       redirect_to @user
     else
       flash[:danger] = 'Alredy Number Added !'
+      redirect_to root_path
     end
   end
 
