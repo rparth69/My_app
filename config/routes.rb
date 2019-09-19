@@ -3,9 +3,6 @@ Rails.application.routes.draw do
   get 'sessions/new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-  get 'static_pages/home'
-  get 'static_pages/help'
-  get 'city/index'
   resources :users do
     resources :cities do
       resources :bookings
@@ -25,4 +22,5 @@ Rails.application.routes.draw do
   end
   resources :cities
   root 'sessions#new'
+  match '*unmatched_route', to: 'application#rescue_404', via: :all
 end
