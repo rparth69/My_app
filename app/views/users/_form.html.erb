@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-offset-5">
+  <div class="col-md-4 col-md-offset-4">
     <%= form_with model: @user, local: true do |f| %>
       <div class="form-group">
         <h1>Register</h1>
@@ -11,15 +11,15 @@
     </div>
     <div>
       <%= f.label :first_name %><br>
-      <%= f.text_field :first_name %>
+      <%= f.text_field :first_name, class: 'form-control' %>
     </div>
     <div class="form-group">
       <%= f.label :last_name %><br>
-      <%= f.text_field :last_name %>
+      <%= f.text_field :last_name, class: 'form-control' %>
     <div class="form-group">
     <div>
       <%= f.label :phone_number %><br>
-      <%= f.text_field :phone_number %>
+      <%= f.text_field :phone_number, class: 'form-control' %>
     </div><br></div>
     <div class="btn">
         <%= f.submit "Register", class: "btn btn-primary" %>

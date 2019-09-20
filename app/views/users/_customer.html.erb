@@ -19,7 +19,7 @@
 
      <th><%= link_to 'Bookings', user_cities_path(user_id: @user.id), class: "btn btn-success" %><br></th>
       <th><%= link_to 'My booking', user_my_booking_path(user_id: @user.id), class: "btn btn-primary" %><br></th>
-     <th><%= link_to 'logout', root_path,  class: "btn btn-warning" %></th>
+     <th><%= link_to 'log out', logout_path, :method => :delete,  class: "btn btn-warning" %></th>
    </h4>
 </div>
 </table>

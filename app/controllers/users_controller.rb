@@ -2,10 +2,7 @@
 
 # Users Controller for using users method
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show]
-  def index
-    @users = User.all
-  end
+  before_action :set_user, only: %i[show edit update destroy]
 
   def new
     @user = User.new
@@ -34,7 +31,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+  end
 
   def cleaner_booking
     @user = User.find(params[:user_id])
@@ -50,6 +48,7 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+    current_user = User.find_by_id(session[:current_user_id])
   end
 
   def user_params
